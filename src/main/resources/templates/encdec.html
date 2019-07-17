@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>EncDec</title> 
+    <link th:href="@{/css/encdec-style.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+	<h2>Result</h2>
+	
+	<div class="row">
+		<div class="col-25">
+	    	<label for="algorithm_label">Algorithm</label>
+	    </div>
+	    <div class="col-75">
+			<h3 th:text="${outputString.algorithm}" id="algorithm_label" name="algorithm_label" />
+	    </div>
+	</div>
+	
+	<div class="row">
+		<div class="col-25">
+	    	<label for="original_label">Original text</label>
+	    </div>
+	    <div class="col-75">
+			<h3 th:text="${outputString.value}" id="original_label" name="original_label" />
+	    </div>
+	</div>
+	
+	<div class="row">
+		<div class="col-25">
+	    	<label for="converted_label">Converted text</label>
+	    </div>
+	    <div class="col-75">
+			<h3 th:text="${outputString.outputValue}" id="converted_label" name="converted_label" />
+	    </div>
+	</div>
+    
+    <div class="row">
+    	<a href="/">Try another encryption / decryption. </a>
+    </div>
+    
+</body>
+</html>

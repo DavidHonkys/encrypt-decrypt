@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EncDec</title>
+	<link th:href="@{/css/encdec-style.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<h2>Let's encrypt or decrypt something!</h2>
+<p th:text="'Number of visits so far: ' + ${counter}" /> 
+
+<div class="container">
+
+  <form action="#" th:action="@{/encdec}" th:object="${code}" method="post"> 
+  
+	  <div class="row">
+	    <div class="col-25">
+	      <label for="algorithm_label">Algorithm</label>
+	    </div>
+	    <div class="col-75">
+		    <select th:field="*{algorithm}"  id="algorithm_label" name="algorithm_label">
+				<option th:each="algorithm : ${algorithms}" 
+					th:value="${algorithm}" 
+					th:text="${algorithm}" 
+				</option>
+			</select>
+	    </div>
+	  </div>
+	  
+	  <div class="row">
+	    <div class="col-25">
+	      <label for="conversion_label">Conversion type</label>
+	    </div>
+	    <div class="col-75">
+		    <select th:field="*{conversion}" id="conversion_label" name="conversion_label">
+				<option th:each="conversion : ${conversions}" 
+						          th:value="${conversion}" 
+						          th:text="${conversion}" 
+				</option>
+			</select>
+	    </div>
+	    
+	  </div>
+	  
+	  <div class="row">
+		  <div class="col-25">
+		  	<label for="text_label">Text</label>
+		  </div>
+		  <div class="col-75">
+		  	<textarea th:field="*{value}" id="text_label" name="text_label" placeholder="Write something.." style="height:200px"></textarea>
+		  </div>
+	  </div>
+	  
+	  <div class="row">
+	    <input type="submit" value="Submit">
+	  </div>
+  
+  </form>
+</div>
+
+</body>
+</html>
