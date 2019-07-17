@@ -1,10 +1,10 @@
-#Requirements?
+## Requirements?
 	Java 8
 
-#How to run?	
-	java –jar <JAR file name>
+## How to run?	
+	java â€“jar <JAR file name>
 
-#How to use application?
+## How to use application?
 	- So far only MorseCode is really implemented.
 	- Select "Conversion type", either "Encrypt" or "Decrypt".
 	- Encrypt do conversion from basic symbols to Morse code. 
